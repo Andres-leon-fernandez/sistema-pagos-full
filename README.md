@@ -28,7 +28,7 @@ Este proyecto inicial como base para aprender y desatollar mis avilidades con un
 
 ---
 
-## ▶️ Cómo ejecutar el proyecto
+## ▶️ link uwu
 
 ### 1. Clonar el repositorio
 ```bash
