@@ -13,6 +13,7 @@ export class AuthServices {
   public username:any;
 
   public isAuthenticate:boolean=false;
+
   public roles: String[]=[];
 
   constructor(private router:Router){}

@@ -7,7 +7,7 @@
   <button matButton routerLink="/admin/home">Home</button>
   <button matButton routerLink="/admin/profile">Perfil</button>
 
-  <button mat-button [matMenuTriggerFor]="importMenu">
+  <button *ngIf="authServices.roles.includes('ADMIN')" mat-button [matMenuTriggerFor]="importMenu">
     <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
     Importar
   </button>
@@ -27,7 +27,7 @@
 
 
 <mat-drawer-container >
-  <mat-drawer #myDrawer opened="false" mode="side" position="start" style="max-width: 175px;">
+  <mat-drawer #myDrawer opened="true" mode="side" position="start" style="max-width: 175px;">
     <mat-list>
       <mat-list-item>
         <button matButton routerLink="/admin/dashboard">
@@ -48,7 +48,7 @@
         </button>
       </mat-list-item>
     </mat-list>
-    
+
   </mat-drawer>
   <mat-drawer-content>
     <div style="min-height: 500px;">

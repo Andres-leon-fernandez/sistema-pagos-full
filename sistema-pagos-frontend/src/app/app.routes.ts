@@ -8,16 +8,26 @@ import { LoadPagos } from './layout/load-pagos/load-pagos';
 import { Dashboard } from './layout/dashboard/dashboard';
 import { Estudiantes } from './layout/estudiantes/estudiantes';
 import { Pagos } from './layout/pagos/pagos';
+import { authGuard } from './guards/auth-guard';
+import { authorizationGuard } from './guards/authorization-guard-guard';
 
 export const routes: Routes = [
   { path: '', component: Login },
   { path: 'login', component: Login },
   {
-    path: 'admin', component: AdminTemple, children: [
+    path: 'admin', component: AdminTemple,
+    canActivate: [authGuard],
+    children: [
       { path: 'home', component: Home },
       { path: 'profile', component: Profile },
-      { path: 'loadEstudiantes', component: LoadEstudiantes },
-      { path: 'loadPagos', component: LoadPagos },
+      {
+        path: 'loadEstudiantes', component: LoadEstudiantes,
+        canActivate: [authorizationGuard], data: { roles: ['ADMIN'] }
+      },
+      {
+        path: 'loadPagos', component: LoadPagos,
+        canActivate: [authorizationGuard], data: { roles: ['ADMIN'] }
+      },
       { path: 'dashboard', component: Dashboard },
       { path: 'estudiantes', component: Estudiantes },
       { path: 'pagos', component: Pagos }

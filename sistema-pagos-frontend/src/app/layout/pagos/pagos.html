@@ -1,14 +1,41 @@
 <div class="container">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>
-        Pagos
-      </mat-card-title>
+      <mat-card-title> Pagos </mat-card-title>
     </mat-card-header>
-    <mat-divider>
-    </mat-divider>
+    <mat-divider> </mat-divider>
     <mat-card-content>
-      Pagos
+      <table matSort mat-table [dataSource]="datasource" class="mat-elevation-z1">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="ID"></th>
+          <td mat-cell *matCellDef="let element">{{ element.Id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="FECHA"></th>
+          <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cantidad">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="CANTIDAD"></th>
+          <td mat-cell *matCellDef="let element">{{ element.cantidad }}</td>
+        </ng-container>
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="TIPO"></th>
+          <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="ESTADO"></th>
+          <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="ESTUDIANTE"></th>
+          <td mat-cell *matCellDef="let element">{{ element.estudiante.nombre }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns:displayColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5,10,20,30,100]" showFirstLastButtons=""></mat-paginator>
     </mat-card-content>
   </mat-card>
 </div>
