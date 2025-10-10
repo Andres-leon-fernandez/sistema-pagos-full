@@ -64,7 +64,7 @@ public class SistemaPagosBackendApplication {
 				for (int i = 0; i < 10; i++) {
 					int index = rdm.nextInt(tiposPago.length);
 					Pago pago = Pago.builder()
-							.cantidad(1000 + (int) (Math.random() * 20000))
+							.cantidad(200 + (int) (Math.random() * 2000))
 							.type(tiposPago[index])
 							.status(PagoStatus.CREADO)
 							.fecha(LocalDate.now())
