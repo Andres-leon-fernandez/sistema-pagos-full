@@ -20,6 +20,7 @@ public class Estudiante {
     private String nombre;
 
     private String apellido;
+    
     @Column(unique = true)
     private String codigo;
 

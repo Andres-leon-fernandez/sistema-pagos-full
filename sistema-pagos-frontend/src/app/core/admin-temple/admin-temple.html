@@ -27,7 +27,7 @@
 
 
 <mat-drawer-container >
-  <mat-drawer #myDrawer opened="true" mode="side" position="start" style="max-width: 175px;">
+  <mat-drawer #myDrawer opened="true" mode="side" position="start">
     <mat-list>
       <mat-list-item>
         <button matButton routerLink="/admin/dashboard">
@@ -51,7 +51,7 @@
 
   </mat-drawer>
   <mat-drawer-content>
-    <div style="min-height: 500px;">
+    <div style="min-height: 600px;">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>

@@ -66,7 +66,7 @@ public class SistemaPagosBackendApplication {
 					Pago pago = Pago.builder()
 							.cantidad(1000 + (int) (Math.random() * 20000))
 							.type(tiposPago[index])
-							.estado(PagoStatus.CREADO)
+							.status(PagoStatus.CREADO)
 							.fecha(LocalDate.now())
 							.estudiante(estudiante)
 							.build();

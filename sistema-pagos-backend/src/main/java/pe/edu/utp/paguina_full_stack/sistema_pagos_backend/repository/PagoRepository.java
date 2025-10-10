@@ -13,7 +13,7 @@ import pe.edu.utp.paguina_full_stack.sistema_pagos_backend.emuns.TypePago;
 public interface PagoRepository extends JpaRepository<Pago, Long> {
     List<Pago> findByEstudianteCodigo(String codigoEstudiante);
 
-    List<Pago> findByEstado(PagoStatus estado);
+    List<Pago> findByStatus(PagoStatus status);
 
     List<Pago> findByType(TypePago type);
 }

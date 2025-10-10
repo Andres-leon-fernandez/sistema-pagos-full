@@ -66,7 +66,7 @@ public class EstudianteController {
 
     @GetMapping("/pagos/{status}")
     public List<Pago> lisatrPagosPorStatus(@RequestParam PagoStatus status) {
-        return pagoRepository.findByEstado(status);
+        return pagoRepository.findByStatus(status);
     }
 
     @GetMapping("/pagos/porTipo")

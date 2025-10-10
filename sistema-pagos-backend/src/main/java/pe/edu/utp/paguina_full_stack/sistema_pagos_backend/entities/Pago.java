@@ -33,7 +33,7 @@ public class Pago {
     private double cantidad;
 
     @Enumerated(EnumType.STRING)
-    private PagoStatus estado;
+    private PagoStatus status;
     private String file;
 
     @ManyToOne

@@ -52,7 +52,7 @@ public class PagoServices {
         Pago pago = Pago.builder()
                 .type(type)
                 .fecha(date)
-                .estado(PagoStatus.CREADO)
+                .status(PagoStatus.CREADO)
                 .estudiante(estudiante)
                 .cantidad(cantidad)
                 .file(filePath.toUri().toString())
@@ -67,7 +67,7 @@ public class PagoServices {
 
     public Pago actualizarPagoPorStatus(PagoStatus status, Long pagoId) {
         Pago pago = pagoRepository.findById(pagoId).get();
-        pago.setEstado(status);
+        pago.setStatus(status);
         return pagoRepository.save(pago);
     }
 }
